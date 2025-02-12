@@ -1,0 +1,24 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "hello",
+  "main": "helloWorld.js",
+  "scripts": {
+    "test": "hey",
+    "start" : "node helloWorld.js"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sanjilsharma7074/Web-Development.git"
+  },
+  "keywords": [
+    "origin2"
+  ],
+  "author": "sanjil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sanjilsharma7074/Web-Development/issues"
+  },
+  "homepage": "https://github.com/Sanjilsharma7074/Web-Development#readme"
+}

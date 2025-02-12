@@ -1,0 +1,7 @@
+1. npm init creates a configuration file.
+2. In this file we can create our own scripts.
+3. "start" : "node helloWorld.js" 
+
+    this is the script that we have created to run our project 
+
+    npm start -> will help us run the file indirectly.
