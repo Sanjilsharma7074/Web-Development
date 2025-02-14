@@ -33,3 +33,4 @@ module.exports = {
 // Value of my math is :  { add1: [Function (anonymous)], sub1: [Function (anonymous)] }
 
 // these are anonymous functions, since these functions does have properties, but does not have any names.
+// add1 becomes a property on the exports object, and its value is this anonymous function.
