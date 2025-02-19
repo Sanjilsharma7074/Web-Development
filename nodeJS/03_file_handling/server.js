@@ -4,7 +4,7 @@ const fs = require ("fs");
 fs.writeFileSync('./name.txt','hey there, myself sanjil')
 
 //asynchronous - always expects a callback 
-fs.writeFile('./async.txt','i am asynchronous', err => {
+fs.writeFile('./async.txt','i am asynchronous', (err,data) => {
 
 })
 
