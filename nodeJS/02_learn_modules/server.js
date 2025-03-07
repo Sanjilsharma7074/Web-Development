@@ -1,19 +1,7 @@
-// "./" represents the current directory.
-const math = require("./math");
-console.log("Math add value is: ",math.add(2,4));
-// Math add value is:  6
+const math = require("./math")
 
-console.log("Math sub value is: ",math.subFn(2,4));
-// Math sub value is:  2
+console.log(math);
+console.log(math.addition(2,3));
+console.log(math.sub(2,3));
 
-
-
-
-
-//destructuring 
-const {add, sub} = require("./math");
-console.log(add(2,3)); //5
-
-
-
-// console.log("Value of my math is : ",math);
+console.log(math.mul(2,3));
