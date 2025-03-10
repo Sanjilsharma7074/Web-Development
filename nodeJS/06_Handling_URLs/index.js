@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
         case "/":
             res.end("HomePage");
             break;
-            
+
         // case "/about":
         //     res.end("I am sanjil sharma");
         //     break;
