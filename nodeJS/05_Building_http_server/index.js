@@ -5,7 +5,11 @@ const fs = require("fs");
 
 const server = http.createServer((req,res) => {
 
-    const log = `${Date.now()}  |  ${req.url} : New request received\n`;
+    // ** we need a callback function to handle the incoming requests on our server.
+
+    // ! Request parameter - It is an object which have all the information related to the request sent on the server
+
+    const log = `${new Date().toLocaleString()}  |  ${req.url} : New request received\n`;
     fs.appendFile("./log.txt" , log , (err,data) => {
 
         switch(req.url){
