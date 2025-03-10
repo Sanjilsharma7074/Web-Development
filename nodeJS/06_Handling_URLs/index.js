@@ -3,29 +3,36 @@ const fs = require("fs");
 const url = require("url");
 
 const server = http.createServer((req, res) => {
+
     if (req.url === "/favicon.ico") return res.end();
-    const log = `${Date.now()}  |  ${req.url} : New request received\n`;
+
+    const log = `${new Date().toLocaleString()}  |  ${req.url} : New request received\n`;
 
     const myurl = url.parse(req.url,true);
+    console.log(myurl);
+
+
+// ! url.parse(urlString, true) is used to parse a URL string.
+// ! req.url contains the URL path of an incoming HTTP request (in a Node.js server).
+// ! The second argument (true) tells url.parse() to parse the query string into an object.
+
+
 //     query: [Object: null prototype] {
 //     name: 'sanjil',
 //     user: '12',
 //     search: 'httprequests'
-//   },
-
-    console.log(myurl);
-    
+//   }
 
     fs.appendFile("./log.txt", log, (err, data) => {
         switch (myurl.pathname) {
         case "/":
             res.end("HomePage");
             break;
-
-
+            
         // case "/about":
         //     res.end("I am sanjil sharma");
         //     break;
+
         case "/about" :
             const username = myurl.query.name;
             const id = myurl.query.user;

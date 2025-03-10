@@ -1,6 +1,6 @@
 https://www.google.com/about?name=sanjil&userID=1
 
-1. https:// - hyper text transfer protocol secure => helps us to establish a communication between our browser and server.
+1. https:// - hyper text transfer "PROTOCOL" secure => a protocol helps us to establish a communication between our browser and server.
 
 2. www.google.com - domain name => user friendly name of IP Address of my server.
 
