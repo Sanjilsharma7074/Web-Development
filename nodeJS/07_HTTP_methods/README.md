@@ -8,7 +8,7 @@ HTTP METHODS
        - In a nutshell, if you sent a GET request on your browser, you'll expect to see some data in return from the server to your request.
 
 3. post - when you want to send(sign up forms, feedback forms -> the data collected through these forms will be saved inside the database
-       as a new data, creating new data) and mutate some data in the server.
+       as a new data, "CREATING NEW DATA" ) and mutate some data in the server.
 
 4. put - when you upload some file or some document in your forms.
        - To put something on our server. (the document, files, images are put on our server)

@@ -18,7 +18,7 @@ const myServer = http.createServer((req,res) => {
                 res.end(`Hi, ${username}`);
                 break;
             case "/signup":
-                if(req.method==="GET") res.end("This is a sign up form");
+                if(req.method==="GET") res.end("This is a sign up form"); // ! we will render a sign up form here, in the later stage.
                 else if(req.method==="POST"){
                     //DB Query
                     res.end("Success");
