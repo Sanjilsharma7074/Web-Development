@@ -4,8 +4,8 @@ const url = require("url");
 
 const myServer = http.createServer((req,res) => {
     if(req.url === "/favicon.ico") return res.end();
-    const log = `${Date.now()} || ${req.url} || ${req.method} || New server Started Successfully.\n`;
     const myurl = url.parse(req.url,true);
+    const log = `${Date.now()} || ${myurl.pathname} || ${req.method} || New server Started Successfully.\n`;
     // console.log(myurl);
     
     fs.appendFile("./log.txt",log,(err,data) => {
