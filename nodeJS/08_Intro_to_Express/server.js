@@ -8,7 +8,7 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/about",(req,res)=>{
-    return res.send(`Hello from About page to : ${req.query.name} who has the user ID : ${req.query.user}`);
+    return res.send(`Hello from About page to : ${req.query.name} \n who has the user ID : ${req.query.user}`);
 })
 
 app.listen(3000,(req,res)=>{
