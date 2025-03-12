@@ -1,5 +1,17 @@
 {
   "dependencies": {
     "express": "^4.21.2"
-  }
+  },
+  "name": "08_intro_to_express",
+  "version": "1.0.0",
+  "description": "As we can see, the callback function used while creating a server in Node.js has become increasingly complex and difficult to manage, even though we haven't implemented any major functionality yet.",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
