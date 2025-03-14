@@ -3,7 +3,7 @@ const users = require("./MOCK_DATA.json");
 const fs = require("fs");
 
 const app = express();
-const port = 3000;
+const port = 8000;
 
 
 
@@ -13,11 +13,12 @@ const port = 3000;
 // You have a basic mobile phone , but you want better photos.
 // You add a special camera lens attachment.
 // → That lens is like a plugin. It improves your phone's camera but your phone still works without it.
-app.use(express.urlencoded({extended:false}));
+
 //this plugin will help the form data append into the body.
 
 //action of plugin => took the form data->created its js object->appended into req.body
 
+app.use(express.urlencoded({extended:false}));
 
 
 app
@@ -34,19 +35,21 @@ app
     return res.json({ status: "pending" });
   });
 
-app.post("/api/users",(req,res)=>{
-  const body = req.body;
-  users.push({...body , id: users.length+1});
-  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users) , (err,data) =>{
-    return res.json({ Status: "Success" });
+
+
+  app.route("/api/users").get((req,res) =>{
+    return res.json(users);
+  }).post((req,res)=>{
+    const body = req.body;
+    users.push({id:users.length+1 ,...body});
+    fs.writeFile("./MOCK_DATA.json",JSON.stringify(users) ,(err,data)=>{
+      return res.json({status : "success" , id:users.length });
+    })
   })
-  
-})
+
+  //! JSON.stringify() is a method in JavaScript that converts a JavaScript object or array into a JSON-formatted string.
 
 
-
-
-// Routes
 app.get("/users",(req,res) => {
 
     const html = `
@@ -57,11 +60,7 @@ app.get("/users",(req,res) => {
     res.send(html);
 })
 
-//Rest APIs
-app.get("/api/users", (req,res) => {
-    return res.json(users);
-})
 
 app.listen(port , () => {
-    console.log("Server is running at port 3000.");
+    console.log("Server is running at port 8000.");
 })

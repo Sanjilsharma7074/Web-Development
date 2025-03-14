@@ -45,7 +45,7 @@ app.get("/users",(req,res)=>{
 
 
 
-app.listen(3000,(req,res)=>{
-    console.log("Server is starting at port 3000");
+app.listen(5000,(req,res)=>{
+    console.log("Server is starting at port 5000");
 
 })

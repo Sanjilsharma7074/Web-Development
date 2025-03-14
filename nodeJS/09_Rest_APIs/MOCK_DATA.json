@@ -8000,19 +8000,11 @@
     "job_title": "Web Designer III"
   },
   {
+    "id": 1001,
     "first_name": "Sanjil",
-    "last_name": "sharma",
-    "email": "sanjilsharma@gmail.com",
+    "last_name": "Sharma",
+    "email": "sanjil@gmail.com",
     "gender": "female",
-    "job_title": "software dev",
-    "id": 1001
-  },
-  {
-    "first_name": "Joe",
-    "last_name": "Warden",
-    "email": "Joe@gmail.com",
-    "gender": "female",
-    "job_title": "software dev",
-    "id": 1002
+    "job_title": "software dev"
   }
 ]
