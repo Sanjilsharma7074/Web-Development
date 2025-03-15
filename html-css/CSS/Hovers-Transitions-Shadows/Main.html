@@ -1,0 +1,97 @@
+<!-- ? For most buttons you see on the internet , if we hover over them with our mouse , they change their style slightly , some get darker , some get lighter , and this is what we are going to learn here.-->
+
+
+<!-- * When we hover over a button and they change their style, will help us learn about hovers. -->
+<!-- ! when we hover in and out, they would change their style smoothly , which will help us learn about transitions. -->
+<!-- ? When we hover over a button, which casts a little bit of shadow , will help us practise shadows. -->
+
+<style>
+
+/* Now we learn how to transition smoothly between these 2 styles i.e. background-color and text-color of the join button will change smoothly when the mouse is hovered over it.*/
+  .subscribe-button{
+    background-color: rgb(200, 0, 0);
+    color: white;
+    border: none;
+    height: 45px;
+    width: 110px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+
+/* Inside these will be the styles that will apply only when we hover over the subscribe button , that's what this :hover mean.
+when we will hover over the button, these styles will now be applied in additions to the previous styles.
+So we are essentially adding extra styles, when we hover.
+:hover is known as pseudo class, it basically adds extra style in the certain situation.
+In this case, its gonna add extra style, when we hover. */
+
+/* The opacity-level describes the transparency-level, where 1 is not transparent at all(complete opacity), 0.5 is 50% see-through, and 0 is completely transparent. As we go from 1 to 0, the element is going to fade out.*/
+  .subscribe-button:hover{
+    opacity: 0.7;
+  }
+
+/*Another example of a pseudo class.
+Active pseudo class activates when we click on the element.
+*/
+  .subscribe-button:active{
+    opacity: 0.3;
+  }
+
+  .join-button{
+    background-color: white;
+    color: rgb(41,118,211);
+    font-weight: bold;
+    border-style: solid;
+    border-color: rgb(41,118,211);
+    height: 32px;
+    width: 55px;
+    border-width: 3px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-left: 8px;
+    transition: background-color 0.15s,
+      color 0.15s;
+  }
+
+/* When we hover over the button everything looks good, but as soon we hover out, these styles change immediately, thats because, hover pseudo class is only applied for when we are hovering in.
+In order to avoid the same for the transition property, we give the values to the transition propertie inside the main class and not the pseudo classes.*/
+  .join-button:hover{
+    background-color: rgb(41,118,211);
+    color: white;
+  }
+
+/* active pseudo class for join-buttomn */
+  .join-button:active{
+    opacity: 0.7;
+  }
+
+/* To transition the shadow. */
+  .tweet-button{
+    background-color: rgb(2, 158 , 255);
+    color: white;
+    border: none;
+    height: 36px;
+    width: 75px;
+    border-radius: 18px;
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+  }
+
+/* To learn to create shadows - to create a faint shadow under the button. 
+Shadow is just another css property - box-shadow.
+In its simplest use, you only specify a horizontal and a vertical shadow. The default color of the shadow is the current text-color.
+"a" in rgba stands for alpha- the value of opacity.
+Third value of the box-shadow stands for blur and makes the shadow blurred
+when first 2 value are 0, the shadow is under the button , that is why we cannot see it then. */
+  .tweet-button:hover{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+</style>
+
+<button class="subscribe-button">SUBSCRIBE</button>
+<button class="join-button">JOIN</button>
+<button class="tweet-button">Tweet</button>

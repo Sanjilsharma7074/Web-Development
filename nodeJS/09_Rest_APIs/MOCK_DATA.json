@@ -1,19 +1,11 @@
 [
   {
     "id": 1,
-    "first_name": "Sara-ann",
-    "last_name": "Breslin",
-    "email": "sbreslin0@answers.com",
-    "gender": "Female",
-    "job_title": "Human Resources Manager"
-  },
-  {
-    "id": 2,
-    "first_name": "Tiena",
-    "last_name": "Shillom",
-    "email": "tshillom1@reuters.com",
-    "gender": "Female",
-    "job_title": "Paralegal"
+    "first_name": "ABC",
+    "last_name": "Sharma",
+    "email": "abc@gmail.com",
+    "gender": "female",
+    "job_title": "software dev"
   },
   {
     "id": 3,

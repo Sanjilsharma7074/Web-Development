@@ -29,10 +29,31 @@ app
     return res.json(user);
   })
   .patch((req, res) => {
-    return res.json({ status: "pending" });
+    const id = Number(req.params.id);
+    const userIndex = users.findIndex((user) => user.id === id);
+    users[userIndex] = { ...users[userIndex], ...req.body };
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users, null, 2), (err) => {
+      return res.json({ status: "success", updatedUser: users[userIndex] });
+    });
   })
   .delete((req, res) => {
-    return res.json({ status: "pending" });
+    const id = Number(req.params.id);
+    const userIndex = users.findIndex((user) => user.id === id);
+
+    if (userIndex === -1)
+      return res.status(404).json({ message: "User not found" });
+
+    // Remove user from the array
+    users.splice(userIndex, 1);
+
+    // Save updated data to MOCK_DATA.json
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users, null, 2), (err) => {
+      if (err) return res.status(500).json({ message: "Error deleting user" });
+      return res.json({
+        status: "success",
+        message: "User deleted successfully",
+      });
+    });
   });
 
 

@@ -1,0 +1,61 @@
+<style>
+
+/* button here is the css selector, it tells the computer which elements on the page we are targeting with our css code , so for now we are targeting all the buttons on the page
+css property - what are we changing 
+css value - Tells the computer what we are changing the property to 
+ex- we are changing the background property to color red */
+
+  .subscribe-button{
+    background-color: rgb(200, 0, 0);
+    color: white;
+    border: none;
+    /* padding: 10px; height=10px + width=10px */
+    height: 45px;
+    width: 110px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .join-button{
+    background-color: white;
+    color: rgb(41,118,211);
+    font-weight: bold;
+
+/*  border-style property in CSS controls the appearance of the border of an element. It defines how the border looks—whether it's solid, dashed, dotted, etc. 
+Setting the border-style explicitly removes the mixed grey and black border effect because it overrides the browser's default styles. */
+    border-style: solid;
+    border-color: rgb(41,118,211);
+    height: 32px;
+    width: 55px;
+    border-width: 3px;
+    border-radius: 2px;
+    cursor: pointer;
+
+/* space = margin(in CSS) 
+left margin -> makes 8px of space from the left side of the button till the subscribe button.*/
+    margin-left: 8px;
+  }
+
+  .tweet-button{
+    background-color: rgb(2, 158 , 255);
+    color: white;
+    border: none;
+    height: 36px;
+    width: 75px;
+
+/* The trick to get the round buttons is that we have to set the border radius to half teh height or width, whichever is the lower , since here the height is 36px so the radius would be the half of the height.*/
+    border-radius: 18px;
+
+/* You can give the font-weight property values in both numbers and terms */
+    font-weight: bold;
+    font-size: 15px;
+    margin-left: 8px;
+    cursor: pointer;
+  }
+</style>
+
+<!-- ?class attribute basically lets us label HTML elements -->
+
+<button class="subscribe-button">SUBSCRIBE</button>
+<button class="join-button">JOIN</button>
+<button class="tweet-button">Tweet</button>
