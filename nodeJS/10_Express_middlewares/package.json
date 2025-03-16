@@ -1,0 +1,17 @@
+{
+  "name": "10_express_middlewares",
+  "version": "1.0.0",
+  "description": "1. Middleware functions are functions that have access to the request object(req), the response object(res), and the next middleware function in the application's request-response cycle.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "fs": "^0.0.1-security"
+  }
+}
