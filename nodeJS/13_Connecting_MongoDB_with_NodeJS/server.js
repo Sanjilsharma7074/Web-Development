@@ -34,7 +34,7 @@ const userSchema = new mongoose.Schema({
   gender: {
     type: String,
   },
-});
+}, {timestamps : true});
 
 const User = mongoose.model("user", userSchema);
 
@@ -77,6 +77,8 @@ app
     });
   });
 
+
+
 app
   .route("/api/users")
   .get((req, res) => {
@@ -104,11 +106,11 @@ app
     const result = await User.create({
       firstName : body.first_name,
       lastName : body.last_name,
-      email : body.femail,
+      email : body.email,
       gender : body.gender,
       jobTitle : body.job_title,
     });
-    console.log(result);
+    console.log("Result : ",result);
     
     return res.status(201).json({msg : "success"});
   });
