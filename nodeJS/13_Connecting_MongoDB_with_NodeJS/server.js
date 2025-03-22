@@ -43,38 +43,51 @@ app.use(express.urlencoded({ extended: false }));
 
 app
   .route("/api/users/:id")
-  .get((req, res) => {
-    const id = Number(req.params.id);
-    const user = users.find((user) => user[0].id === id);
+  .get(async (req, res) => {
+
+    const user = await User.findById(req.params.id);
+
+    // const id = Number(req.params.id);
+    // const user = users.find((user) => user[0].id === id);
+
     if (!user) return res.status(404).json({ Error: "User not found" });
     return res.json(user);
   })
-  .patch((req, res) => {
-    const id = Number(req.params.id);
-    const userIndex = users.findIndex((user) => user.id === id);
-    users[userIndex] = { ...users[userIndex], ...req.body };
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users, null, 2), (err) => {
-      return res.json({ status: "success", updatedUser: users[userIndex] });
-    });
+  .patch(async (req, res) => {
+
+    await User.findByIdAndUpdate(req.params.id , {email : "changed"});
+
+    return res.json({Status : "Success"});
+
+    // const id = Number(req.params.id);
+    // const userIndex = users.findIndex((user) => user.id === id);
+    // users[userIndex] = { ...users[userIndex], ...req.body };
+    // fs.writeFile("./MOCK_DATA.json", JSON.stringify(users, null, 2), (err) => {
+    //   return res.json({ status: "success", updatedUser: users[userIndex] });
+    // });
   })
-  .delete((req, res) => {
-    const id = Number(req.params.id);
-    const userIndex = users.findIndex((user) => user.id === id);
+  .delete(async (req, res) => {
 
-    if (userIndex === -1)
-      return res.status(404).json({ message: "User not found" });
+    await User.findByIdAndDelete(req.params.id );
+    res.json({Status : "Success"});
 
-    // Remove user from the array
-    users.splice(userIndex, 1);
+    // const id = Number(req.params.id);
+    // const userIndex = users.findIndex((user) => user.id === id);
 
-    // Save updated data to MOCK_DATA.json
-    fs.writeFile("./MOCK_DATA.json", JSON.stringify(users, null, 2), (err) => {
-      if (err) return res.status(500).json({ message: "Error deleting user" });
-      return res.json({
-        status: "success",
-        message: "User deleted successfully",
-      });
-    });
+    // if (userIndex === -1)
+    //   return res.status(404).json({ message: "User not found" });
+
+    // // Remove user from the array
+    // users.splice(userIndex, 1);
+
+    // // Save updated data to MOCK_DATA.json
+    // fs.writeFile("./MOCK_DATA.json", JSON.stringify(users, null, 2), (err) => {
+    //   if (err) return res.status(500).json({ message: "Error deleting user" });
+    //   return res.json({
+    //     status: "success",
+    //     message: "User deleted successfully",
+    //   });
+    // });
   });
 
 
@@ -85,8 +98,8 @@ app
 
     const allDbusers = await User.find({});
 
-    console.log(req.headers);
-    res.setHeader("X-MyName", "Sanjil Sharma"); //Custom Header
+    // console.log(req.headers);
+    // res.setHeader("X-MyName", "Sanjil Sharma"); //Custom Header
     return res.json(allDbusers);
   })
   .post(async (req, res) => {
