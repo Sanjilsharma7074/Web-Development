@@ -81,10 +81,13 @@ app
 
 app
   .route("/api/users")
-  .get((req, res) => {
+  .get(async (req, res) => {
+
+    const allDbusers = await User.find({});
+
     console.log(req.headers);
     res.setHeader("X-MyName", "Sanjil Sharma"); //Custom Header
-    return res.json(users);
+    return res.json(allDbusers);
   })
   .post(async (req, res) => {
     const body = req.body;
@@ -117,10 +120,13 @@ app
 
 //! JSON.stringify() is a method in JavaScript that converts a JavaScript object or array into a JSON-formatted string.
 
-app.get("/users", (req, res) => {
+
+// ? We now want to bring the users details from the database itself instead of fetching it from files.
+app.get("/users", async (req, res) => {
+  const allDbUsers = await User.find({});
   const html = `
     <ul>
-    ${users.map((user) => `<li>${user.first_name}</li>`).join("")}
+    ${allDbUsers.map((user) => `<li>${user.firstName} - ${user.email}</li>`).join("")}
     </ul>
     `;
   res.send(html);
