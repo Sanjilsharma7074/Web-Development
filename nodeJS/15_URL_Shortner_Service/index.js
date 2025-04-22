@@ -14,6 +14,7 @@ app.use(express.json());
 app.use("/url", urlRoute);
 
 app.get("/:shortId", async (req, res) => {
+  
   try {
     const shortId = req.params.shortId;
     console.log("Short ID from request:", shortId);

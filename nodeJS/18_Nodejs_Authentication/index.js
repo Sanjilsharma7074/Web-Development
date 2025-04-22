@@ -5,7 +5,7 @@ const URL = require("./models/url");
 
 const staticRoute = require("./routes/staticRouter");
 const urlRoute = require("./routes/url");
-// const userRoute = require("./routes/user");
+const userRoute = require("./routes/user");
 
 const app = express();
 const PORT = 8001;
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use("/", staticRoute);
 app.use("/url", urlRoute);
-// app.use("/user", userRoute);
+app.use("/user", userRoute);
 
 app.get("/url/:shortId", async (req, res) => {
   
