@@ -39,4 +39,9 @@ Client will request to the express server, in between we'll have an AUTH MIDDLEW
 
 3. Let's first make a route for sign up within routes/user.js.
 
-  - /user will have a post route within which we can create the new user.
+  - user will have a post route within which we can create the new user.
+  - we can then successfully login using the registered data on /login route.
+
+4. We'll now learn to generate a cookie(an unique id) when logging in the page.
+
+5. After generating a cookie we can easily store the data of the user through middlewares by parsing through the cookie value.
